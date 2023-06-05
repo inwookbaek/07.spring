@@ -1,0 +1,41 @@
+package com.lec.controller;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.lec.domain.Board;
+import com.lec.service.BoaradService;
+
+@Controller
+public class BoardController {
+
+	@Autowired
+	private BoaradService boardService;
+	
+	@RequestMapping("/getBoardList")
+	public String getBoardList(Model model) {
+		model.addAttribute("title", "게시판관리");
+		
+		List<Board> boards = boardService.getBoardList();
+					
+		model.addAttribute("boards", boards);
+		
+		return "getBoardList";
+	}
+	
+	@RequestMapping("/insertBoard")
+	public String insertBoard(Model model) {
+		return "insertBoard";
+	}
+	
+	@RequestMapping("/getBoard")
+	public String getBoard(Model model) {
+		return "getBoard";
+	}
+}

@@ -1,0 +1,15 @@
+package com.lec.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.lec.service.BoardService;
+
+@Controller
+@SessionAttributes("member")
+public class BoardController {
+
+	@Autowired
+	private BoardService boardService;
+}

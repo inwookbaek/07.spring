@@ -1,0 +1,22 @@
+package com.lec.domain;
+
+import javax.persistence.Entity;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@Entity
+public class Board {
+
+	private long seq;
+	private String title;
+	private String writer;
+	private String content;
+	private String createDate;
+	private long cnt;
+	
+}

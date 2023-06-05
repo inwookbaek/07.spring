@@ -1,0 +1,9 @@
+package com.lec.bbs;
+
+public class Snippet {
+	private String id;
+	private String pwd;
+	private String name;
+	private String email;
+}
+

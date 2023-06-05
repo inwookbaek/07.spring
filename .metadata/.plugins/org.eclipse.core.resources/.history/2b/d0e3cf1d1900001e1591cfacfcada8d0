@@ -1,0 +1,17 @@
+package com.lec.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HelloController {
+
+	@GetMapping("/hello") 
+	public void hello(Model model) {
+		System.out.println("1............");
+		model.addAttribute("greeting", "<h3>Hello Thymeleaf!!!</h3>");
+		// return "hello";
+	}
+}

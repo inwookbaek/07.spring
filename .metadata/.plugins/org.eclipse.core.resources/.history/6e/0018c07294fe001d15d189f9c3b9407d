@@ -1,0 +1,34 @@
+package com.lec;
+
+import org.junit.runner.RunWith;
+import org.junit.runner.Runner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.lec.persistence.BoardRepository;
+
+import ch.qos.logback.core.net.server.ServerRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class BoardRepositoryTest {
+
+	@Autowired // new BoardRepository() 수동생성대신에 자동생성후 주입
+	private BoardRepository boardRepo;
+
+	public void testInsertBoard() {
+		// TODO Auto-generated method stub
+
+	}
+}
+
+
+
+
+
+
+
+
+
+

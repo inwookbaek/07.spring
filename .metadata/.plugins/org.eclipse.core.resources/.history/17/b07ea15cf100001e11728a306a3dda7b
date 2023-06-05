@@ -1,0 +1,51 @@
+package com.lec.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+	@Override
+	protected void configure(HttpSecurity security) throws Exception {
+	    
+//		security.authorizeRequests().antMatchers("/").permitAll();
+//		security.authorizeRequests().antMatchers("/member/**").authenticated();
+//		security.authorizeRequests().antMatchers("/manager/**").hasRole("MANAGER");
+//		security.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
+		
+		security.authorizeRequests()
+			.antMatchers("/").permitAll()
+			.antMatchers("/member/**").authenticated()
+			.antMatchers("/manager/**").hasRole("MANAGER")
+			.antMatchers("/admin/**").hasRole("ADMIN");
+
+		security.csrf().disable();
+		security.formLogin().loginPage("/login").defaultSuccessUrl("/loginSuccess", true); 
+		// formLogin메서드는 form태그기반의 로그인을 지원한다는 설정
+		// 에러화면이 아니라 스프링부트가 제공하는 로그인화면으로 이동
+		// 스프링부트의 로그인화면이 아니라 사용자로그인화면을 제공할 
+		// 경우는 loginPage()메서드를 추가
+	}
+	
+	// 스프링시큐리티에서 제공하는 기본사용자와 비밀번호
+	// 사용자   : user
+	// 비밀번호 : Using generated security password: 55171919-244c-4929-8f88-f69c8ea65925
+	@Autowired // AuthenticationManagerBuilder를 의존주입, 
+	private void authenticate(AuthenticationManagerBuilder auth) throws Exception {
+		
+		auth.inMemoryAuthentication() // 로그인정보를 memory에 저장하는 메서드
+			.withUser("manager")
+			.password("{noop}12345") // {noop}는 스프링이 문자그대로 비밀번호로 인식하게 하는 옵션
+			.roles("MANAGER");
+		
+
+		auth.inMemoryAuthentication()
+		.withUser("admin")
+		.password("{noop}12345") // {noop}는 스프링이 문자그대로 비밀번호로 인식하게 하는 옵션
+		.roles("ADMIN");
+	}
+}

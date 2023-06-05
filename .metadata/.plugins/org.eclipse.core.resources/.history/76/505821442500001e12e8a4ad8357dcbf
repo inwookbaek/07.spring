@@ -1,0 +1,20 @@
+package com.lec.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.lec.domain.Board;
+import com.lec.persistence.BoardRepository;
+
+public class BoardServiceImpl implements BoardService {
+
+	@Autowired
+	private BoardRepository boardRepository;
+	@Override
+	public List<Board> getBoardList(Board board) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

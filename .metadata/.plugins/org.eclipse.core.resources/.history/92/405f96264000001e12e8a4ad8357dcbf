@@ -1,0 +1,16 @@
+package com.lec.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class EXceptionController {
+
+	@RequestMapping("/boardError")
+	public String boardError() {
+		throw new BNE
+	}
+
+	@RequestMapping("/illegalArgmentError")
+	@RequestMapping("/sqlError")
+}

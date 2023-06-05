@@ -1,0 +1,30 @@
+package com.lec.domain.member;
+
+import javax.validation.constraints.NotBlank;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@Builder
+public class JoinRequest {
+	
+    @NotBlank
+    private String id;
+
+    @NotBlank
+    private String name;
+
+    @NotBlank
+    private String pwd;
+
+    @NotBlank
+    private String checkPwd;
+
+    @NotBlank
+    private String email;
+}

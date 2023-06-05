@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:align="center">
+		<h1>글상세보기</h1>
+		<form th:action="@{updateBoard}" method="post">
+			<input type="text" name="seq" th:value="${board.seq}"/>
+		</form>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.lec.exception;
+
+public class GlobalExceptionHandler {
+
+}

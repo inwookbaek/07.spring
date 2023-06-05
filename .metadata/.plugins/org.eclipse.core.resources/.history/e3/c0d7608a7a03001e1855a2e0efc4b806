@@ -1,0 +1,14 @@
+package com.lec.service;
+
+import org.springframework.http.HttpStatus;
+
+public interface MemberService {
+
+	HttpStatus checkIdDuplicate(String id);}
+	JoinResponse join(JoinRequest req)}
+	void saveMember(JoinRequest req);}
+	LoginResponse login(LoginRequest req);}
+	void authenticate(String id, String pwd);
+	void isExistUserId(String id);
+	void checkPwd(String pwd, String checkPwd); 
+}

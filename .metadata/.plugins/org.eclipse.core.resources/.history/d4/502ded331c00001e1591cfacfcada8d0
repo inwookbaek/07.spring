@@ -1,0 +1,20 @@
+package com.lec.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lec.domain.Member;
+import com.lec.persistence.MemberRepository;
+
+@Service
+public class MemberServiceImpl {
+
+	@Autowired
+	private MemberRepository memberRepo;
+	
+	public Member getMember(Member member) {
+		Optional<Member> findMember = memberRepo.findByid(member.getId());
+	}
+}

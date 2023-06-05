@@ -1,0 +1,19 @@
+package com.lec.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class BoardController {
+
+	@RequestMapping("/getBoardList")
+	public String getBoardList(Model model) {
+		model.addAttribute("title", "글목록조회하기(model)");
+		model.addAttribute("name", "홍길동");
+		model.addAttribute("board", new ArrayList<Board>());
+		
+		return "getBoardList";
+	}
+	
+}

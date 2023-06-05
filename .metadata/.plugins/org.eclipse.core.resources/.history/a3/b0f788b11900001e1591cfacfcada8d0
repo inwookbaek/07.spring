@@ -1,0 +1,6 @@
+package com.lec.controller;
+
+@Controller
+public class EXceptionController {
+
+}

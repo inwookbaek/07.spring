@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:align="center">
+		<h1>게시글목록조회</h1>
+		<h3><font color="red" th:text="${session['member'].name}"></font>님! 게시판 입장을 환영합니다!!</h3>	
+		<h3><font color="red" th:text="${session.member.name}"></font>님! 게시판 입장을 환영합니다!!</h3>
+		<a th:href="@{/logout}">Log Out</a>	
+	</div>
+	${ boardList }
+</body>
+</html>

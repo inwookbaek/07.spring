@@ -1,0 +1,26 @@
+package com.lec.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@Entity
+public class Board {
+
+	@Id                  // primary key
+	@GeneratedValue      // pk 자동생성(일련번호)
+	private long seq;
+	private String title;
+	private String writer;
+	private String content;
+	private String createDate;
+	private long cnt;
+	
+}

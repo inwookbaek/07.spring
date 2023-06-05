@@ -1,0 +1,19 @@
+package com.lec.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class BoardController {
+
+	@GetMapping("/hello")
+	public String hello() {
+		return "Hello!!!";
+	}
+	
+	@GetMapping("/getBoardList")
+	public String getBoardList() {
+		return "getBoardList";
+	}
+	
+}

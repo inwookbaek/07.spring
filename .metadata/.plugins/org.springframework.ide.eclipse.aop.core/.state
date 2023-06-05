@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="backend"/>
+<aop-project name="lec07_BoardWeb"/>
+<aop-project name="lec06_security"/>
+<aop-project name="lec05_thymeleaf"/>
+<aop-project name="lec03_jap_01"/>
+<aop-project name="lec99_jwt"/>
+<aop-project name="lec02_auto_di"/>
+<aop-project name="lec04_jsp"/>
+<aop-project name="lec01_basic"/>
+</aop-reference-model>

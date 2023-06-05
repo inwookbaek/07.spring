@@ -1,0 +1,19 @@
+package com.lec;
+
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.lec.domain.Member;
+import com.lec.persistence.BoardRepository;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class RelationMappingTest {
+
+	@Autowired private BoardRepository boardRepository;
+	@Autowired private Mem
+	
+	
+}

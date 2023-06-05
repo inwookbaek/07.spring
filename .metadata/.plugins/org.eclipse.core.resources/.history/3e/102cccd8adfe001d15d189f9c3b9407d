@@ -1,0 +1,25 @@
+package com.lec;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.lec.domain.Board;
+import com.lec.persistence.BoardRepository;
+
+public class QueryAnnotationTest {
+
+	@Autowired
+	private BoardRepository boardRepository;
+	
+	@Test
+	public void testQueryAnnotationTest1() {
+		List<Board> boardList = boardRepository.queryAnnotation1("테스트 제목 10");
+
+		System.out.println("===> 검색결과");
+		for(Board board:boardList) {
+			System.out.println("---> " + board.toString());
+		}
+	}
+}

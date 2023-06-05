@@ -1,0 +1,47 @@
+package com.lec.controller;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.lec.domain.Board;
+
+@Controller
+public class BoardController {
+
+	@RequestMapping("/getBoardList")
+	public String getBoardList(Model model) {
+		model.addAttribute("title", "글목록조회하기");
+		
+		List<Board> boards = new ArrayList<>();
+		
+		for(int i=1;i<=10;i++) {
+			Board board = new Board();
+			board.setSeq(new Long(i));
+			board.setTitle("게시판프로그램 테스트 " + i);
+			board.setWriter("홍길동");
+			board.setContent(i + "번째 상세내용입니다!!");
+			board.setCreateDate(new Date());
+			board.setCnt(0l);
+			boards.add(board);
+		}
+				
+		model.addAttribute("boards", boards);
+		
+		return "getBoardList";
+	}
+	
+	@RequestMapping("/insertBoard")
+	public String insertBoard(Model model) {
+		return "insertBoard";
+	}
+	
+	@RequestMapping("/getBoard")
+	public String getBoard(Model model) {
+		return "getBoard";
+	}
+}
